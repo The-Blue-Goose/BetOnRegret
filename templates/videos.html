@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>🎥 Educational Videos</h2>
+<p>Watch our short, engaging videos that break down the math behind gambling games and common misconceptions like the Gambler’s Fallacy.</p>
+
+<!-- Social Media Videos (Placeholder for now) -->
+<section style="margin-top: 2rem;">
+    <h3>📱 Our TikTok & Instagram Videos</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+        <div class="social-video-card">Coming soon: <strong>Short #1</strong></div>
+        <div class="social-video-card">Coming soon: <strong>Short #2</strong></div>
+        <div class="social-video-card">Coming soon: <strong>Short #3</strong></div>
+        <div class="social-video-card">Coming soon: <strong>Short #4</strong></div>
+    </div>
+</section>
+
+<!-- External YouTube Videos -->
+<section style="margin-top: 3rem;">
+    <h3>🌐 External Video Resources</h3>
+    <div class="video-grid">
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/BhH7ZeHUVPg" title="Video 1" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/zyEtJR80F38" title="Video 2" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/S-Sx4wzme4I" title="Video 3" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/IJNR2EpS0jw" title="Video 4" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+<div style="height: 100px;"></div> <!-- Space before footer -->
+{% endblock %}

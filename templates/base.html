@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title if title else "Bet on Regret" }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Bet on Regret</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('roulette') }}">Roulette</a>
+            <a href="{{ url_for('craps') }}">Craps</a>
+            <a href="{{ url_for('memes') }}">Memes</a>
+            <a href="{{ url_for('videos') }}">Videos</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <a href="{{ url_for('about') }}" style="color: white; text-decoration: none;">
+            <p>
+                &copy; 2025 Bet on Regret | <span style="text-decoration: underline;">About</span>
+            </p>
+        </a>
+    </footer>
+    
+</body>
+</html>

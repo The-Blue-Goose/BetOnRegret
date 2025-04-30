@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Welcome!</h2>
+
+<p>This site helps you explore how gambling games like roulette and craps are designed to favor the house. You can run thousands of simulations to visualize your chances and learn the hidden math behind the games.</p>
+
+<h3>🎰 The House Always Wins (Eventually)</h3>
+<p>Casino games are built with a mathematical edge that guarantees profit for the house over time. Even games that seem simple or fair, like betting red or black in roulette, are skewed by the presence of 0 and 00 (on American wheels), which give the casino a slight advantage every spin.</p>
+
+<div style="text-align: center; margin: 1rem 0;">
+    <img src="{{ url_for('static', filename='images/MainImg1.png') }}" alt="House edge graph or casino table" style="max-width: 100%; height: auto;">
+</div>
+
+<h3>🔁 The Winning Streak Myth</h3>
+<p>It’s common for players to believe they’re "on a roll" or that a win is "due" after a series of losses. This is called the <strong>Gambler's Fallacy</strong>—the mistaken belief that past random events influence future ones. Every spin, roll, or draw is statistically independent unless stated otherwise (like in card counting).</p>
+
+<div style="text-align: center; margin: 1rem 0;">
+    <img src="{{ url_for('static', filename='images/MainImg2.png') }}" alt="Gambler's fallacy or streak illusion graphic" style="max-width: 100%; height: auto;">
+</div>
+
+<h3>💸 Quit While You’re Ahead?</h3>
+<p>Many gamblers believe in quitting after a big win, thinking they’ve "beaten the system." While this can minimize loss, it doesn’t change the long-term odds. It’s a good harm-reduction practice, but not a strategy to win.</p>
+
+<h3>🔎 What You’ll Learn</h3>
+<ul>
+    <li>What the odds really are in popular games</li>
+    <li>How your expected return changes based on the game</li>
+    <li>Why the casino always comes out on top in the long run</li>
+</ul>
+
+<h3>🎲 Try It Yourself</h3>
+<p>Run simulations to see what would happen if you played 100, 1,000, or 10,000 times!</p>
+
+<div style="margin-bottom: 2rem;">
+    <a class="button" href="{{ url_for('roulette') }}" style="margin-right: 1rem;">Explore Roulette</a>
+    <a class="button" href="{{ url_for('craps') }}">Explore Craps</a>
+</div>
+
+<!-- Add bottom spacing to prevent overlap with footer -->
+<div style="height: 100px;"></div>
+
+{% endblock %}

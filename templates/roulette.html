@@ -1,0 +1,62 @@
+{% set title = "Roulette - Bet on Regret" %}
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Roulette Simulator</h2>
+
+<!-- Simulation Form at the Top -->
+<form method="POST">
+    <label for="trials">Number of Trials:</label>
+    <input type="number" name="trials" id="trials" value="1000" min="1" required>
+    <br><br>
+    <label for="bet">Bet on:</label>
+    <select name="bet" id="bet">
+        <option value="red">Red</option>
+        <option value="black">Black</option>
+        <option value="single_number">Single Number</option>
+    </select>
+    <br><br>
+    <button class="button" type="submit">Run Simulation</button>
+</form>
+
+<hr>
+
+<!-- Image Placeholders -->
+<div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin: 2rem 0;">
+    <img src="{{ url_for('static', filename='images/RouletteWheel.png') }}" alt="Roulette Wheel" style="max-width: 400px; width: 100%; height: auto;">
+    <img src="{{ url_for('static', filename='images/RouletteTable.png') }}" alt="Roulette Table" style="max-width: 750px; width: 100%; height: auto;">
+</div>
+
+<!-- Game Description and Statistics -->
+<h3>🎡 How Roulette Works</h3>
+<p>Roulette is a game of chance played on a spinning wheel divided into numbered pockets. Players place bets on where they think the ball will land. In American roulette, the wheel has 38 pockets: numbers 1–36, 0, and 00. The numbers 1–36 alternate between red and black, while 0 and 00 are green.</p>
+
+<h3>📊 Odds and House Edge</h3>
+<ul>
+    <li><strong>Red/Black Bet:</strong> Pays 1:1. You win if the ball lands on a red or black number (depending on your choice), but lose if it lands on 0 or 00. This is the same for even/odd bets too. <br><em>Probability of winning: 18/38 ≈ 47.37%</em></li>
+    <li><strong>Single Number Bet:</strong> Pays 35:1. You win if the ball lands exactly on your chosen number. <br><em>Probability of winning: 1/38 ≈ 2.63% </em></li>
+</ul>
+
+<p>The <strong>house edge</strong> in American roulette is about <strong>5.26%</strong> for most bets. This edge comes from the inclusion of 0 and 00, which are not red or black and do not count toward any even-money outside bets.</p>
+
+<h3>📌 Things to Note</h3>
+<ul>
+    <li>Each spin is independent—past spins do not affect future outcomes.</li>
+    <li>Betting systems (like Martingale) don’t change the long-term odds.</li>
+    <li>Over many trials, outcomes converge toward expected probabilities.</li>
+</ul>
+
+<!-- WikiHow and Wikipedia Buttons -->
+<div style="display: flex; justify-content: center; gap: 1rem; margin-top: 3rem;">
+    <a href="https://www.wikihow.com/Play-Roulette" target="_blank" class="wikihow-button">
+        📚 Learn More on WikiHow
+    </a>
+    <a href="https://en.wikipedia.org/wiki/Roulette" target="_blank" class="wikipedia-button">
+        📖 Read More on Wikipedia
+    </a>
+</div>
+
+<!-- Space before footer -->
+<div style="height: 100px;"></div>
+
+{% endblock %}

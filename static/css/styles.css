@@ -1,0 +1,121 @@
+body {
+    background-color: #121212; /* Dark gray background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e0e0e0; /* Light text */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1f1f1f; /* Slightly lighter than body */
+    color: #ffffff;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 1rem;
+    color: #dddddd;
+    text-decoration: none; 
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+main {
+    padding: 2rem;
+}
+
+h1, h2 {
+    color: #ff5555; /* Brighter red for contrast */
+}
+
+.button {
+    background-color: #aa0000;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #cc0000;
+}
+
+.video-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-top: 1rem;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.6); /* Deeper shadow for dark mode */
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.social-video-card {
+    background-color: #1e1e1e; /* Dark card background */
+    color: #e0e0e0;
+    padding: 1rem;
+    width: 200px;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+.wikihow-button {
+    background-color: #60b044;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.wikihow-button:hover {
+    background-color: #50a034;
+}
+
+.wikipedia-button {
+    background-color: #333333;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.wikipedia-button:hover {
+    background-color: #444444;
+}
+
+footer {
+    background-color: #1f1f1f;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

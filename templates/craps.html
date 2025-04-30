@@ -1,0 +1,79 @@
+{% set title = "Craps - Bet on Regret" %}
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Craps Simulator</h2>
+
+<!-- Simulation Form at the Top -->
+<form method="POST">
+    <label for="trials">Number of Trials:</label>
+    <input type="number" name="trials" id="trials" value="1000" min="1" required>
+    <br><br>
+    <button class="button" type="submit">Run Simulation</button>
+</form>
+
+<hr>
+
+<!-- Dice Image (Early visual cue) -->
+<div style="text-align: center; margin: 2rem 0;">
+    <img src="{{ url_for('static', filename='images/CrapsDice.png') }}" alt="Dice" style="max-width: 200px; width: 100%; height: auto;">
+</div>
+
+<!-- Game Description -->
+<h3>🎲 How Craps Works</h3>
+<p>Craps is a fast-paced dice game where players bet on the outcome of rolls of two six-sided dice. The game is played in two main phases: the <strong>Come-Out Roll</strong> and the <strong>Point Phase</strong>.</p>
+
+<ul>
+    <li><strong>Come-Out Roll:</strong>
+        <ul>
+            <li>Roll a 7 or 11 – <em>you win immediately</em></li>
+            <li>Roll a 2, 3, or 12 – <em>you lose immediately (craps)</em></li>
+            <li>Roll 4, 5, 6, 8, 9, or 10 – that number becomes your <strong>Point</strong></li>
+        </ul>
+    </li>
+    <li><strong>Point Phase:</strong> Roll again until either:
+        <ul>
+            <li>You roll the Point again – <em>you win</em></li>
+            <li>You roll a 7 – <em>you lose (called "seven out")</em></li>
+        </ul>
+    </li>
+</ul>
+
+<!-- Craps Table Image -->
+<div style="text-align: center; margin: 2rem 0;">
+    <img src="{{ url_for('static', filename='images/CrapsTable.png') }}" alt="Craps Table" style="max-width: 750px; width: 100%; height: auto;">
+</div>
+
+<!-- Stats Section -->
+<h3>📊 Odds and House Edge</h3>
+<p>In the basic "Pass Line" bet:</p>
+<ul>
+    <li><strong>Probability of winning on Come-Out:</strong> 8/36 ≈ 22.22%</li>
+    <li><strong>Probability of losing on Come-Out:</strong> 4/36 ≈ 11.11%</li>
+    <li><strong>Probability of establishing a Point:</strong> 24/36 ≈ 66.67%</li>
+    <li><strong>Overall chance of winning a Pass Line bet:</strong> ≈ 49.29%</li>
+</ul>
+
+<p>The <strong>house edge</strong> on a standard Pass Line bet is about <strong>1.41%</strong>, making craps one of the better games in the casino for players—if you stick to the basic bets.</p>
+
+<!-- Strategy Notes -->
+<h3>📌 Things to Note</h3>
+<ul>
+    <li>There are many advanced bets in craps, but many carry worse odds than the Pass Line.</li>
+    <li>Just like roulette, every roll is random and independent.</li>
+    <li>Bankroll management is key—wins can come quickly, but so can losses.</li>
+</ul>
+
+<!-- WikiHow and Wikipedia Buttons -->
+<div style="display: flex; justify-content: center; gap: 1rem; margin-top: 3rem;">
+    <a href="https://www.wikihow.com/Play-Craps" target="_blank" class="wikihow-button">
+        📚 Learn More on WikiHow
+    </a>
+    <a href="https://en.wikipedia.org/wiki/Craps" target="_blank" class="wikipedia-button">
+        📖 Read More on Wikipedia
+    </a>
+</div>
+
+<div style="height: 100px;"></div> <!-- Space before footer -->
+
+{% endblock %}

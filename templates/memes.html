@@ -1,0 +1,128 @@
+{% set title = "Memes - Bet on Regret" %}
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>🎭 Gambling Memes</h2>
+<p>Sometimes, humor is the best way to communicate risk and superstition. Here's a collection of memes about the thrills (and pitfalls) of gambling.</p>
+
+<style>
+    .meme-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    .meme-grid .meme-container {
+        background-color: #ccc; /* darker gray */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        aspect-ratio: 1 / 1;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        transition: transform 0.2s;
+        cursor: pointer;
+    }
+
+    .meme-grid .meme-container:hover {
+        transform: scale(1.02);
+    }
+
+    .meme-grid img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        border-radius: 4px;
+    }
+
+    /* Modal styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 10;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.85);
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .modal img {
+        max-width: 90%;
+        max-height: 80vh;
+        margin-bottom: 1rem;
+    }
+
+    .modal-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .modal-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+</style>
+
+
+<div class="meme-grid">
+    {% for i in range(1, 31) %}
+        <div class="meme-container" onclick="openModal({{ i }})">
+            <img src="{{ url_for('static', filename='memes/Meme%02d.jpeg' % i) }}" alt="Meme {{ i }}">
+        </div>
+    {% endfor %}
+</div>
+
+
+<!-- Modal Overlay -->
+<div id="memeModal" class="modal" onclick="closeModal()">
+    <img id="modalImage" src="" alt="Large meme">
+    <div class="modal-buttons" onclick="event.stopPropagation()">
+        <button onclick="prevMeme()">⬅️</button>
+        <button onclick="closeModal()">Close</button>
+        <button onclick="nextMeme()">➡️</button>
+    </div>
+</div>
+
+<script>
+    let currentMeme = 1;
+
+    function openModal(index) {
+        currentMeme = index;
+        const modal = document.getElementById('memeModal');
+        const img = document.getElementById('modalImage');
+        img.src = `/static/memes/Meme${String(index).padStart(2, '0')}.jpeg`;
+        modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+        document.getElementById('memeModal').style.display = 'none';
+    }
+
+    function nextMeme() {
+        currentMeme = (currentMeme % 30) + 1;
+        openModal(currentMeme);
+    }
+
+    function prevMeme() {
+        currentMeme = (currentMeme - 2 + 30) % 30 + 1;
+        openModal(currentMeme);
+    }
+
+    // Optional: Close modal on ESC
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowRight') nextMeme();
+        if (e.key === 'ArrowLeft') prevMeme();
+    });
+</script>
+
+<div style="height: 100px;"></div>
+{% endblock %}

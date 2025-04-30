@@ -1,0 +1,15 @@
+{% set title = "Results - Bet on Regret" %}
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ game }} Results</h2>
+<ul>
+    <li><strong>Trials:</strong> {{ result.trials }}</li>
+    <li><strong>Wins:</strong> {{ result.wins }}</li>
+    <li><strong>Losses:</strong> {{ result.losses }}</li>
+    <li><strong>Net Gain/Loss:</strong> {{ result.net }}</li>
+</ul>
+
+<a class="button" href="{{ url_for(game.lower()) }}">Run Again</a>
+<a class="button" href="{{ url_for('index') }}">Back to Home</a>
+{% endblock %}
