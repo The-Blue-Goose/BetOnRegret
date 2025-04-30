@@ -1,10 +1,28 @@
 {
     "version": 2,
     "builds": [
-      { "src": "api/index.py", "use": "@vercel/python" }
+      {
+        "src": "api/index.py",
+        "use": "@vercel/python",
+        "config": { 
+          "includeFiles": [
+            "templates/**",
+            "static/**"
+          ]
+        }
+      }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "api/index.py" }
+      {
+        "src": "/static/(.*)",
+        "dest": "/static/$1",
+        "headers": {
+          "Cache-Control": "public, max-age=31536000, immutable"
+        }
+      },
+      { 
+        "src": "/(.*)", 
+        "dest": "api/index.py" 
+      }
     ]
   }
-  

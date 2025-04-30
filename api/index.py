@@ -100,7 +100,7 @@ def about():
     return render_template("about.html", title="About - Bet on Regret")
 
 # Export the app for Vercel to detect
-app = app
+app = Flask(__name__, template_folder="../templates", static_folder="../static")
 
 if __name__ == "__main__":
     app.run(debug=True)
