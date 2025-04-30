@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <title>{{ title if title else "Bet on Regret" }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <meta property="og:title" content="Bet on Regret" />
+    <meta property="og:description" content="Simulate casino games and explore how gambling gets people hooked." />
+    <meta property="og:image" content="{{ url_for('static', filename='preview.png', _external=True) }}" />
+    <meta property="og:url" content="https://betonregret.org/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
     <header>
