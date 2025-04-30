@@ -4,16 +4,28 @@
 <h2>🎥 Educational Videos</h2>
 <p>Watch our short, engaging videos that break down the math behind gambling games and common misconceptions like the Gambler’s Fallacy.</p>
 
-<!-- Social Media Videos (Placeholder for now) -->
+<!-- Social Media Videos (with first video embedded) -->
 <section style="margin-top: 2rem;">
     <h3>📱 Our TikTok & Instagram Videos</h3>
     <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-        <div class="social-video-card">Coming soon: <strong>Short #1</strong></div>
+
+        <!-- Embedded Vertical Video -->
+        <div class="social-video-card" style="padding: 0; background: none; box-shadow: none;">
+            <div style="max-width: 360px; width: 100%;">
+                <video style="width: 100%; height: auto; border-radius: 12px;" controls>
+                    <source src="{{ url_for('static', filename='videos/Video1.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <!-- Placeholder cards -->
         <div class="social-video-card">Coming soon: <strong>Short #2</strong></div>
         <div class="social-video-card">Coming soon: <strong>Short #3</strong></div>
         <div class="social-video-card">Coming soon: <strong>Short #4</strong></div>
     </div>
 </section>
+
 
 <!-- External YouTube Videos -->
 <section style="margin-top: 3rem;">
