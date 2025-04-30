@@ -13,7 +13,6 @@ def roulette():
         trials = int(request.form["trials"])
         bet_type = request.form["bet"]
         
-        # Check for too many trials (to prevent overloading website)
         if trials > 10000:
             return render_template("error.html", message="Please enter a number of trials less than or equal to 10,000.")
 
@@ -27,7 +26,7 @@ def roulette():
                 if outcome in [2,4,6,8,10,11,13,15,17,20,22,24,26,28,29,31,33,35]:
                     wins += 1
             elif bet_type == "single_number":
-                if outcome == 17:  # assume betting on 17
+                if outcome == 17:  # assuming betting on 17
                     wins += 1
 
         payout = 0
@@ -40,7 +39,7 @@ def roulette():
             "trials": trials,
             "wins": wins,
             "losses": trials - wins,
-            "net": payout - trials  # assuming 1 unit per trial
+            "net": payout - trials
         }
 
         return render_template("results.html", result=result, game="Roulette")
@@ -63,7 +62,7 @@ def craps():
             if roll1 in [7, 11]:
                 wins += 1
             elif roll1 in [2, 3, 12]:
-                losses += 1  # Count immediate loss
+                losses += 1
             else:
                 point = roll1
                 while True:
@@ -99,6 +98,9 @@ def videos():
 @app.route("/about")
 def about():
     return render_template("about.html", title="About - Bet on Regret")
+
+# Export the app for Vercel to detect
+app = app
 
 if __name__ == "__main__":
     app.run(debug=True)
