@@ -28,8 +28,14 @@
             </div>
         </div>
 
-        <!-- Placeholder cards -->
-        <div class="social-video-card">Coming soon: <strong>Short #3</strong></div>
+        <div class="social-video-card" style="padding: 0; background: none; box-shadow: none;">
+            <div style="max-width: 360px; width: 100%;">
+                <video style="width: 100%; height: auto; border-radius: 12px;" controls>
+                    <source src="{{ url_for('static', filename='videos/Video3.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
     </div>
 </section>
 
