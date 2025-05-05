@@ -100,5 +100,9 @@ def videos():
 def about():
     return render_template("about.html", title="About - Bet on Regret")
 
+@app.route("/examples")
+def examples():
+    return render_template("examples.html", title="Examples - Bet on Regret")
+
 if __name__ == "__main__":
     app.run()

@@ -1,0 +1,41 @@
+{% set title = "People & Gambling - Bet on Regret" %}
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Gambling in Real Life: Two Stories</h2>
+
+<p>Gambling doesn't have to be taboo. Like many forms of entertainment, it's about intention, mindset, and limits. Here are two fictional but relatable stories that show the difference between responsible gambling and harmful patterns.</p>
+
+<hr>
+
+<h3 style="color: #60b044;">🎉 Jamie’s Fun Night Out</h3>
+<p>Jamie goes to the casino once every few months with friends. She brings $50 and sees it as the price of admission — no different from a concert or movie ticket. She plays low-stakes games, enjoys the social time, and leaves when her money runs out or when she's ahead. Jamie doesn’t expect to win — for her, it’s about the fun and the atmosphere. She laughs, walks away with no regret, and doesn’t feel tempted to go back until the next planned outing.</p>
+
+<div style="text-align: center; margin: 1rem 0;">
+    <img src="{{ url_for('static', filename='images/FunNight.jpeg') }}" alt="Person smiling in casino" style="max-width: 100%; height: auto; border-radius: 10px;">
+</div>
+
+<hr>
+
+<h3 style="color: #ff5555;">💸 Kevin’s Endless Chase</h3>
+<p>Kevin went to the casino once and won big. Since then, he's been trying to recreate that high. Each time he loses, he convinces himself he’s “due” for a win. He starts dipping into savings, playing riskier bets, and promising himself just “one more spin.” Each time, he thinks, “This will be the one.” But the odds don’t care. Kevin’s chasing a fantasy — not realizing that the house edge makes long-term winning almost impossible.</p>
+
+<div style="text-align: center; margin: 1rem 0;">
+    <img src="{{ url_for('static', filename='images/BadNight.jpeg') }}" alt="Person looking anxious at a slot machine" style="max-width: 100%; height: auto; border-radius: 10px;">
+</div>
+
+<hr>
+
+<h3>What This Shows</h3>
+<ul>
+    <li><strong>Intentions matter</strong> — Are you here for fun or to “win it back”?</li>
+    <li><strong>Set limits</strong> — Know what you’re willing to lose, and stick to it.</li>
+    <li><strong>Understand the odds</strong> — The house edge isn’t just a theory, it’s a guarantee over time. Try our simulations to see for yourself.</li>
+</ul>
+
+<p>Gambling can be recreational — but it can also be dangerous. Knowing the difference is the first step.</p>
+
+<!-- Add bottom spacing to prevent overlap with footer -->
+<div style="height: 100px;"></div>
+
+{% endblock %}

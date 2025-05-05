@@ -32,6 +32,38 @@ h1, h2 {
     color: #ff5555; /* Brighter red for contrast */
 }
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2a2a2a;
+    min-width: 120px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.dropdown-content a {
+    color: #dddddd;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #3a3a3a;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 .button {
     background-color: #aa0000;
     color: white;

@@ -17,10 +17,16 @@
         <h1>Bet on Regret</h1>
         <nav>
             <a href="{{ url_for('index') }}">Home</a>
-            <a href="{{ url_for('roulette') }}">Roulette</a>
-            <a href="{{ url_for('craps') }}">Craps</a>
-            <a href="{{ url_for('memes') }}">Memes</a>
+            <div class="dropdown">
+                <a href="#">Games ▾</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('roulette') }}">Roulette</a>
+                    <a href="{{ url_for('craps') }}">Craps</a>
+                </div>
+            </div>
+            <a href="{{ url_for('examples') }}">Examples</a>
             <a href="{{ url_for('videos') }}">Videos</a>
+            <a href="{{ url_for('memes') }}">Memes</a>
         </nav>
     </header>
     <main>
